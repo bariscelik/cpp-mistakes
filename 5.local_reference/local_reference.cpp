@@ -10,7 +10,6 @@ int *getNumber()
 int main()
 {
     int number = *getNumber();
-    std::cout << number << std::endl;
 
     return 0;
 }
