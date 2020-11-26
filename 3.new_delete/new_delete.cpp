@@ -1,6 +1,8 @@
 #include <iomanip>
 #include <iostream>
 
+#define BAD
+
 class A {
 public:
     A()
@@ -21,7 +23,15 @@ void throwedFunc() noexcept(false)
 int main()
 {
     A* a = new A();
+#ifdef BAD
     throwedFunc();
+#else
+    try {
+        throwedFunc();
+    } catch (const char* ex) {
+        std::cout << ex << std::endl;
+    }
+#endif
     delete a;
     return 0;
 }

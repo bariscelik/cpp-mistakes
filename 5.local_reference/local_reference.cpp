@@ -1,7 +1,7 @@
 #include <iomanip>
 #include <iostream>
 
-int *getNumber()
+int* getNumber()
 {
     int num = 10;
     return &num;
